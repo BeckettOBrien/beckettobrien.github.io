@@ -3,14 +3,18 @@
 - Verilog
 - SystemC
 - RTL design
+- FPGAs
 - Verification
 - cocotb
 - Vivado
 - Yosys
 - Catapult HLS
-- FPGA bring-up
 - Digital logic
 - Computer architecture
+- Circuit design
+- Analog circuits
+- PCB layout
+- KiCad
 
 ## Software
 - C++
@@ -19,12 +23,17 @@
 - x86 assembly
 - JavaScript
 - Objective-C
+- Swift
+- Java
+- Unreal Engine
+- Web
 
 ## Systems
-- Linux device drivers
+- Linux
 - Embedded firmware
 - ROS2
 - CANopen
 - Networking
+- Security
 - Docker
 - Git
