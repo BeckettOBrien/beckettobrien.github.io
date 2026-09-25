@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:type" content="profile">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+// set the theme before first paint so there is no flash
+try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}
+</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="sig" href="#top">{{SIG}}</a>
+    <nav class="topnav">
+      <a href="#work">Work</a>
+      <a href="#tools" data-opt>Tools</a>
+      <a href="#education" data-opt>Education</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>{{NAME}}</h1>
+        <p class="lede">{{TAGLINE}}</p>
+        {{BIO}}
+        {{CONTACT}}
+      </div>
+
+      <div class="die-wrap">
+        <div class="die-cap"><span>{{DIE_LABEL}}</span><span>{{DIE_HINT}}</span></div>
+        <div class="die">
+          <div class="die-side l"></div>
+          <div class="die-side r"></div>
+          <div class="core">{{FLOORPLAN}}</div>
+        </div>
+        <div class="die-legend">
+          <span><b style="background:var(--gold)"></b>active</span>
+          <span><b style="background:var(--cyan)"></b>finished</span>
+          <span><b style="border:1px solid var(--muted)"></b>in progress</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="work">
+    <div class="wrap">
+      <div class="sec-head"><h2>Work</h2><span class="count">{{COUNT}}</span></div>
+      {{PROJECTS}}
+    </div>
+  </section>
+
+  {{TOOLS}}
+
+  {{EDUCATION}}
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>Get in touch</h2></div>
+      <p class="blurb">{{CONTACT_BLURB}}</p>
+      {{CONTACT_2}}
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span>{{FOOTER}}</span>
+    <span class="foot-links"><a href="#top">Back to top</a></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("themeBtn").addEventListener("click",function(){
+  var el=document.documentElement,cur=el.getAttribute("data-theme"),
+      dark=cur?cur==="dark":matchMedia("(prefers-color-scheme: dark)").matches,
+      next=dark?"light":"dark";
+  el.setAttribute("data-theme",next);
+  try{localStorage.setItem("theme",next)}catch(e){}
+});
+</script>
+</body>
+</html>
